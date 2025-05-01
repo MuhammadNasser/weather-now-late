@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object NetworkModule {
 
     @Provides
-    fun provideBaseUrl() = NetworkConstants.BASE_URL
+    fun provideBaseUrl() = NetworkConstants.CURRENT_WEATHER_BASE_URL
 
     @Provides
     fun provideRetrofit(baseUrl: String): Retrofit =

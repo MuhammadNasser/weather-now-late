@@ -3,6 +3,9 @@ package com.muhammad.core.model.remote
 import com.google.gson.annotations.SerializedName
 
 data class CurrentWeatherResponse(
+    @SerializedName("coord")
+    val coordinates: Coordinates? = null,
+
     @SerializedName("name")
     val name: String? = null,
 
@@ -11,6 +14,13 @@ data class CurrentWeatherResponse(
 
     @SerializedName("weather")
     val weather: List<WeatherInfo>? = null
+)
+
+data class Coordinates(
+    @SerializedName("lat")
+    val latitude: Double? = null,
+    @SerializedName("lon")
+    val longitude: Double? = null
 )
 
 data class MainInfo(

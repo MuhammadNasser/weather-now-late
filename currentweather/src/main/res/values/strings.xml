@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="_7_day_forecast">7-day forecast</string>
+    <string name="change_unit">Change unit</string>
+    <string name="back">Back</string>
+    <string name="current_weather_in">Weather in %1$s</string>
+</resources>
