@@ -19,16 +19,16 @@ It provides current weather and 7-day forecast with offline support for search h
 
 ## 🧱 Tech Stack
 
-| Layer       | Tools / Libraries                                        |
-|-------------|----------------------------------------------------------|
-| UI          | Jetpack Compose                                          |
-| DI          | Hilt                                                     |
-| Architecture| Clean Architecture (Modular), MVVM + MVI                 |
-| Networking  | Retrofit, OkHttp, Moshi                                  |
-| Persistence | Room, DataStore                                          |
-| Navigation  | Jetpack Navigation Compose                               |
-| Async       | Kotlin Coroutines, Flow                                  |
-| Testing     | JUnit, Turbine                                           |
+| Layer       | Tools / Libraries                        |
+|-------------|------------------------------------------|
+| UI          | Jetpack Compose                          |
+| DI          | Hilt                                     |
+| Architecture| Clean Architecture (Modular), MVVM + MVI |
+| Networking  | Retrofit, OkHttp, Moshi                  |
+| Persistence | Room                                     |
+| Navigation  | Jetpack Navigation Compose               |
+| Async       | Kotlin Coroutines, StateFlow             |
+| Testing     | JUnit, Turbine                           |
 
 ---
 
@@ -61,7 +61,7 @@ It provides current weather and 7-day forecast with offline support for search h
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourusername/weather-app.git
+   git clone https://github.com/MuhammadNasser/weather-app.git
    ```
 
 2. Add your OpenWeatherMap API key:
@@ -87,4 +87,4 @@ Run tests with:
 ---
 
 ## 📸 Screenrecord
-![App Screens](screenshots/screenrecord.gif)
+![Preview](screenshots/screenrecord.gif)
