@@ -49,7 +49,6 @@ dependencies {
 
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.ui)
-    implementation(libs.androidx.material3)
 
     // Dagger Hilt
     implementation(libs.hilt.android)

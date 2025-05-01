@@ -46,6 +46,9 @@ dependencies {
     implementation (project(":cityinput"))
     implementation (project(":data"))
     implementation (project(":core"))
+    implementation (project(":currentweather"))
+    implementation (project(":dayforecast"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -54,7 +57,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation(libs.weatherkit)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.ui)
     implementation(libs.androidx.material3)
