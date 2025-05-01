@@ -89,7 +89,7 @@ fun ForecastScreen(
                     LazyColumn(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(padding)
+                            .padding(15.dp)
                     ) {
                         itemsIndexed(items = state.data) { index, forecast ->
                             ForecastItem(forecast = forecast)

@@ -1,4 +1,4 @@
-package com.muhammad.core.utils
+package com.muhammad.weathernowlater.utils
 
 object ScreenRoutes {
     const val SCREEN_KEY_CITY_INPUT = "city_input"
