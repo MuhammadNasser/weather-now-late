@@ -1,10 +1,10 @@
-package com.muhammad.cityinput.data.local.dao
+package com.muhammad.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.muhammad.cityinput.data.local.entities.RecentCity
+import com.muhammad.data.local.entities.RecentCity
 
 @Dao
 interface CityDao {

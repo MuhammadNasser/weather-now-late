@@ -1,4 +1,4 @@
-package com.muhammad.cityinput.data.local.entities
+package com.muhammad.data.local.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

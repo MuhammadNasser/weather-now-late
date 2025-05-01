@@ -1,12 +1,13 @@
-package com.muhammad.cityinput.data.repository
+package com.muhammad.data.local.source
 
-import com.muhammad.cityinput.data.local.dao.CityDao
-import com.muhammad.cityinput.data.local.entities.RecentCity
+import com.muhammad.core.source.local.CityInputLocalDataSource
+import com.muhammad.data.local.dao.CityDao
+import com.muhammad.data.local.entities.RecentCity
 import javax.inject.Inject
 
-class CityRepositoryImpl @Inject constructor(
+class CityInputLocalDataSourceImpl @Inject constructor(
     private val dao: CityDao
-) : CityRepository {
+) : CityInputLocalDataSource {
     override suspend fun saveCity(cityName: String) {
         val exists = dao.exists(cityName)
 
