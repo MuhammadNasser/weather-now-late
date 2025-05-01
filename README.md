@@ -61,7 +61,7 @@ It provides current weather and 7-day forecast with offline support for search h
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourusername/weather-app.git
+   git clone https://github.com/MuhammadNasser/weather-app.git
    ```
 
 2. Add your OpenWeatherMap API key:
