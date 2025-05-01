@@ -1,6 +1,6 @@
-package com.muhammad.cityinput.data.repository
+package com.muhammad.core.source.local
 
-interface CityRepository {
+interface CityInputLocalDataSource {
     suspend fun saveCity(cityName: String)
     suspend fun getRecentCities(): List<String>
 }

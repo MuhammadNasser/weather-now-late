@@ -7,26 +7,29 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.muhammad.cityinput.presentation.CityInputScreen
+import com.muhammad.core.utils.ScreenRoutes.SCREEN_KEY_CITY_INPUT
+import com.muhammad.core.utils.ScreenRoutes.SCREEN_KEY_CURRENT_WEATHER
+import com.muhammad.core.utils.ScreenRoutes.SCREEN_KEY_FORECAST
 
 @Composable
 fun WeatherNavHost(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = ScreenRoutes.SCREEN_KEY_CITY_INPUT
+        startDestination = SCREEN_KEY_CITY_INPUT
     ) {
-        composable(ScreenRoutes.SCREEN_KEY_CITY_INPUT) {
+        composable(SCREEN_KEY_CITY_INPUT) {
             CityInputScreen(onCitySelected = { city ->
-                navController.navigate("${ScreenRoutes.SCREEN_KEY_CURRENT_WEATHER}/$city")
+                navController.navigate("$SCREEN_KEY_CURRENT_WEATHER/$city")
             })
         }
         composable(
-            route = "${ScreenRoutes.SCREEN_KEY_CURRENT_WEATHER}/{city}",
+            route = "${SCREEN_KEY_CURRENT_WEATHER}/{city}",
             arguments = listOf(navArgument("city") { type = NavType.StringType })
         ) { backStackEntry ->
             val city = backStackEntry.arguments?.getString("city") ?: ""
 //            CurrentWeatherScreen(city)
         }
-        composable(ScreenRoutes.SCREEN_KEY_FORECAST) {
+        composable(SCREEN_KEY_FORECAST) {
 //            ForecastScreen()
         }
     }

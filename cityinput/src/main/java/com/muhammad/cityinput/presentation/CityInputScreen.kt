@@ -52,9 +52,11 @@ fun CityInputScreen(
             singleLine = true,
             trailingIcon = {
                 IconButton(onClick = {
-                    viewModel.saveCity()
-                    onCitySelected(state.cityName)
-                    viewModel.onCityNameChanged("")
+                    if (state.cityName.isNotEmpty()) {
+                        viewModel.saveCity()
+                        onCitySelected(state.cityName)
+                        viewModel.onCityNameChanged("")
+                    }
                 }) {
                     Icon(Icons.Default.Search, contentDescription = "Search")
                 }
@@ -78,7 +80,6 @@ fun CityInputScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-                                viewModel.onCityNameChanged(city)
                                 onCitySelected(city)
                             }
                             .padding(vertical = 12.dp),

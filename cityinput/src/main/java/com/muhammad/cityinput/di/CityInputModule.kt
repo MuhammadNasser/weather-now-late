@@ -1,32 +1,24 @@
 package com.muhammad.cityinput.di
 
-import android.content.Context
-import androidx.room.Room
-import com.muhammad.cityinput.data.local.dao.CityDao
-import com.muhammad.cityinput.data.local.database.CityDatabase
-import com.muhammad.cityinput.data.repository.CityRepository
-import com.muhammad.cityinput.data.repository.CityRepositoryImpl
+import com.muhammad.cityinput.domain.GetRecentCitiesUseCase
+import com.muhammad.cityinput.domain.SaveCityUseCase
+import com.muhammad.core.repository.CityInputRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.components.SingletonComponent
+import dagger.hilt.android.components.ViewModelComponent
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ViewModelComponent::class)
 object CityInputModule {
 
     @Provides
-    fun provideDatabase(@ApplicationContext context: Context): CityDatabase =
-        Room.databaseBuilder(
-            context,
-            CityDatabase::class.java,
-            "city_db"
-        ).build()
+    fun provideSaveCityUseCase(repo: CityInputRepository): SaveCityUseCase {
+        return SaveCityUseCase(repo)
+    }
 
     @Provides
-    fun provideCityDao(db: CityDatabase): CityDao = db.cityDao()
-
-    @Provides
-    fun provideCityRepository(dao: CityDao): CityRepository = CityRepositoryImpl(dao)
+    fun provideGetRecentCitiesUseCase(repo: CityInputRepository): GetRecentCitiesUseCase {
+        return GetRecentCitiesUseCase(repo)
+    }
 }
