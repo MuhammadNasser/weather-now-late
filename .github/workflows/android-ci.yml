@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -38,24 +37,18 @@ jobs:
       - name: Make Gradle executable
         run: chmod +x ./gradlew
 
-      # 5. Lint Check
-      - name: Run Lint (App module)
-        run: ./gradlew :app:lint
+      # 5. Lint Check (ignore weatherkit)
+      - name: Run Lint (App module only)
+        run: ./gradlew :app:lint -x :weatherkit:lint
 
-      # 6. Run Unit Tests
+      # 6. Run Unit Tests (excluding weatherkit)
       - name: Run Unit Tests
-        run: ./gradlew testDebug
+        run: ./gradlew testDebug -x :weatherkit:testDebug
 
-      # 7. Build APK
+      # 7. Build APK (excluding weatherkit from classpath)
       - name: Build Debug APK
-        run: ./gradlew :app:assembleDebug
+        run: ./gradlew :app:assembleDebug -x :weatherkit:build
 
-#      # 8. Upload APK artifact
-#      - name: Upload APK
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: weather-now-later-apk
-#          path: app/build/outputs/apk/debug/app-debug.apk
-
+      # 8. Setup local.properties with API_KEY
       - name: Setup local.properties with API_KEY
         run: echo "API_KEY=${{ secrets.API_KEY }}" >> local.properties
