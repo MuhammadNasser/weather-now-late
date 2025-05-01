@@ -87,4 +87,4 @@ Run tests with:
 ---
 
 ## 📸 Screenrecord
-![App Screens](screenshots/Screenrecorder-2025-05-01-22-08-07-899.mp4)
+![App Screens](screenshots/screenrecord.gif)
