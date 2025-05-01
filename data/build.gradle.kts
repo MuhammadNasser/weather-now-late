@@ -13,6 +13,7 @@ android {
         minSdk = 26
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "API_KEY", "${property("API_KEY")}")
         consumerProguardFiles("consumer-rules.pro")
     }
 
@@ -28,6 +29,9 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+    }
+    buildFeatures {
+        buildConfig = true
     }
     kotlinOptions {
         jvmTarget = "11"

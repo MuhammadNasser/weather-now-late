@@ -2,6 +2,7 @@ package com.muhammad.data.remote.api
 
 import com.muhammad.core.model.remote.CurrentWeatherResponse
 import com.muhammad.core.model.remote.ForecastResponse
+import com.muhammad.core.utils.NetworkConstants.FORECAST_BASE_URL
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -11,7 +12,7 @@ interface WeatherApiService {
         @Query("q") cityName: String, @Query("appid") apiKey: String, @Query("units") units: String
     ): CurrentWeatherResponse
 
-    @GET("https://api.openweathermap.org/data/3.0/onecall")
+    @GET(FORECAST_BASE_URL)
     suspend fun getDayForecast(
         @Query("lat") lat: Double,
         @Query("lon") lon: Double,

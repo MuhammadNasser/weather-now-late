@@ -5,7 +5,7 @@ import com.muhammad.core.model.query.DayForecastQuery
 import com.muhammad.core.model.remote.CurrentWeatherResponse
 import com.muhammad.core.model.remote.ForecastResponse
 import com.muhammad.core.source.remote.WeatherRemoteDataSource
-import com.muhammad.core.utils.NetworkConstants.API_KEY
+import com.muhammad.data.BuildConfig.API_KEY
 import com.muhammad.data.remote.api.WeatherApiService
 import javax.inject.Inject
 
